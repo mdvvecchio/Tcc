@@ -4,7 +4,6 @@
 String record = "A:100:1";
 char *p, *i, *a, *b;
 
-int LED = 13;
 int FRENTE = 6;
 int TRAZ = 5;
 int MOTOR = 11;
@@ -14,10 +13,16 @@ void setup() {
 
   Serial.begin(9600);
 
-  pinMode(LED, OUTPUT);
   pinMode(FRENTE, OUTPUT);
   pinMode(TRAZ, OUTPUT);
   pinMode(MOTOR, OUTPUT);
+  pinMode(9, OUTPUT); //Enable do motor acionado
+  
+  analogWrite(11, 0);
+  analogWrite(10, 0);
+  analogWrite(5, 0);
+  analogWrite(6,0);
+  digitalWrite(9,HIGH);
 
 }
 
@@ -39,39 +44,52 @@ void loop () {
 
       if(String(p) == "f") {
 
-        acionamento(FRENTE,int(a),int(b));
-        
-
+        acionamento(FRENTE,String(a).toInt(),0);
+  Serial.println("****************");
+  Serial.print("frente - ");
+  Serial.print(a);
+  Serial.print(" - ");
+  Serial.println(b);
+  Serial.println("****************");
       }
 
       else if(String(p) == "t") {
-        
-        acionamento(TRAZ,int(a),int(b));
 
+        acionamento(TRAZ,String(a).toInt(),0);
+  Serial.println("****************");
+  Serial.print("traz - ");
+  Serial.print(int(a));
+  Serial.print(" - ");
+  Serial.println(b);
+        Serial.println("****************");
       }
-      
+
       else if(String(p) == "m") {
-        
-        acionamento(MOTOR,int(a),int(b));
-        
+
+        acionamento(MOTOR,String(a).toInt(),String(b).toInt());
+  Serial.println("****************");
+  Serial.print("motor - ");
+  Serial.print(int(a));
+  Serial.print(" - ");
+  Serial.println(b);
+        Serial.println("****************");
       }
       else {
-        
+  Serial.println("****************");
         Serial.println("Aguardando Comando");
-        
+        Serial.println("****************");
       }
 
-
     }
+    Serial.println("--------------------");
     Serial.print("Porta: ");
     Serial.print(p);
     Serial.print(" Intensidade: ");
-    Serial.print(a);
+    Serial.print(int(a));
     Serial.print(" Sentido: ");
     Serial.print(b);
-    Serial.print(" / "); 
-    Serial.print(record);
-    Serial.println(""); 
+    Serial.print(" / ");
+    Serial.println(record);
     Serial.println("--------------------");
   }
 
@@ -79,13 +97,24 @@ void loop () {
 
 void acionamento(int porta,int intensidade, int sentido)
 {
-  if (sentido == 1) { 
-    porta = porta -1; 
+  if(porta == 10 || porta == 11){
+    analogWrite(11, 0);
+    analogWrite(10, 0);
+    delay(50);
   }
-  
+    
+  if (sentido == 1) {
+    porta = porta -1;
+    Serial.println("inverte");
+  }
+
   analogWrite(porta, intensidade);
-  Serial.println("OK");
-  delay(100);
+  Serial.println("++++++++++++++++++++++++");
+  Serial.print("OK");
+  Serial.print(" - ");
+  Serial.print(intensidade);
+  Serial.print(" - ");
+  Serial.println(porta);
+  Serial.println("++++++++++++++++++++++++");
+  delay(200);
 }
-
-
