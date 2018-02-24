@@ -1,7 +1,7 @@
 Tcc
 # Tcc Mechatronics Engeneer 2018
 
-Our work to Conclusion course of Mechatronics Engeneer. The objective of this work is automation of trains toys using bluetoth and android aplications
+Our work to Conclusion course of Mechatronics Engeneer. The objective of this work is automation of trains toys using bluetooth and android aplications
 
 ## Getting Started
 
