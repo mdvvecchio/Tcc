@@ -30,19 +30,19 @@ Eduardo Matheus Vernilo - C12ACE8
 
 The objectives of this project with say before is automation operatios to trains toys using bluetooth and android aplications. The work will be subdivided in four task forces.
 
-####Android Team 
+###Android Team 
 Your responsabiliti is aplication android development. The aplication will control the lights front and back with on / off and intensity.
 
 Control motor velocity
 
 
-####Microcontroler Team
+###Microcontroler Team
 Your responsabiliti is develop microcontroler software. This software suporting android aplication intermediation software and hardware
 
-####Eletronics Team 
+###Eletronics Team 
 Your responsabiliti is develop eletronic circuit to control a motor and leds with pwm.
 
-####Scientific Team and Documentation
+###Scientific Team and Documentation
 
 Any team has responsabilities write the text then describe our work, your teory and the results
 
@@ -84,6 +84,9 @@ To install the softwares you need:
 
 [Projects]
 (https://www.youtube.com/watch?v=y0KNW133DY0) - This exemple is same.
+
+[Latex]
+(http://tcc.tsi.gp.utfpr.edu.br/paginas/modelos-latex-da-utfpr) - This is a tutorial of Latex language, to write profissional and scientific texts and pdf on ABNT model.
 
 ## Bibliography
 
