@@ -6,7 +6,7 @@ char *p, *i, *a, *b;
 
 int FRENTE = 6;
 int TRAZ = 5;
-int MOTOR = 11;
+int MOTOR = 10;
 
 
 void setup() {
@@ -22,7 +22,7 @@ void setup() {
   analogWrite(10, 0);
   analogWrite(5, 0);
   analogWrite(6,0);
-  digitalWrite(9,HIGH);
+  digitalWrite(8,HIGH);
 
 }
 
